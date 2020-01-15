@@ -19,8 +19,10 @@ public class SendMessageWithLinkTest {
         driver.get("https://dev.integrivideo.com/demo/chat/new");
         driver.manage().window().maximize();
 
+        String sendText = "Test 4" + " " + "https://catalog.onliner.by/";
+
         WebElement webElement = driver.findElement(By.tagName("textarea"));
-        webElement.sendKeys("Test 4" + " " + "https://catalog.onliner.by/");
+        webElement.sendKeys(sendText);
 
         WebElement webElement1 = driver.findElement(By.cssSelector(".integri-chat-send-message.integri-chat-action-button"));
         webElement1.click();
@@ -28,7 +30,7 @@ public class SendMessageWithLinkTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement webElement2 = driver.findElement(By.cssSelector(".integri-chat-message .integri-chat-message-text"));
-        assertEquals(webElement2.getText(), "Test 4" + " " + "https://catalog.onliner.by/", "smth went wrong");
+        assertEquals(webElement2.getText(), sendText, "smth went wrong");
 
         driver.quit();
     }

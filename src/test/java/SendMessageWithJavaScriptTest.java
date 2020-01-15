@@ -20,14 +20,14 @@ public class SendMessageWithJavaScriptTest {
         driver.get("https://dev.integrivideo.com/demo/chat/new");
         driver.manage().window().maximize();
 
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         WebElement webElement = driver.findElement(By.tagName("textarea"));
         webElement.sendKeys("<html><body><p>test 5</p></body></html>");
         webElement.sendKeys(Keys.ENTER);
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
         WebElement webElement1 = driver.findElement(By.cssSelector(".integri-chat-message .integri-chat-message-text"));
-        assertEquals(webElement1.getText(), "test 5", "smth went wrong");
+        assertEquals(webElement1.getText(), "<html><body><p>test 5</p></body></html>", "smth went wrong");
 
         driver.quit();
     }
