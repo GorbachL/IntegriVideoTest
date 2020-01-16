@@ -33,8 +33,6 @@ public class ChangeEmailTest {
         webElement = driver.findElement(By.cssSelector(".iv-icon.iv-icon-cog"));
         webElement.click();
 
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
         WebElement webElement2 = driver.findElement(By.cssSelector("[name='userEmail']"));
         String userEmail = webElement2.getAttribute("value");
 
