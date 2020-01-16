@@ -32,7 +32,9 @@ public class ChangeNameTest {
         WebElement webElement1 = driver.findElement(By.cssSelector(".integri-user-settings-save.integri-button-blue"));
         webElement1.click();
 
-        WebElement webElement2 = driver.findElement(By.xpath("//*[contains(text(), 'New User - Test 10')]"));
+        driver.navigate().refresh();
+
+        WebElement webElement2 = driver.findElement(By.cssSelector(".integri-session-user-name .integri-session-user-name"));
         assertEquals(webElement2.getText(), "New User - Test 10", "smth went wrong - User Name was NOT changed");
 
         System.out.println(webElement2.getText());
