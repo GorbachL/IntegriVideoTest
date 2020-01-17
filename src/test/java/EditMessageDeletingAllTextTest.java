@@ -23,7 +23,7 @@ public class EditMessageDeletingAllTextTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement webElement = driver.findElement(By.tagName("textarea"));
-        webElement.sendKeys("Test 6");
+        webElement.sendKeys("Test 7");
 
         WebElement webElement1 = driver.findElement(By.cssSelector(".integri-chat-send-message.integri-chat-action-button"));
         webElement1.click();
