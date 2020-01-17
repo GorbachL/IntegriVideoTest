@@ -3,7 +3,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -29,7 +28,6 @@ public class DownloadFileTest {
 
 //        WebElement webElement2 = driver.findElement(By.cssSelector(".integri-file-upload-start.integri-float-right.integri-button-blue"));
 //        webElement2.click();
-
 
 
     }
