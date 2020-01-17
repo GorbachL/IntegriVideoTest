@@ -38,7 +38,9 @@ public class EditMessageTest {
         webElement4.sendKeys("Edit this.. ");
         webElement4.sendKeys(Keys.ENTER);
 
-        WebElement webElement5 = driver.findElement(By.xpath("//*[contains(text(), 'Edit this.. Test 6')]"));
+        driver.navigate().refresh();
+
+        WebElement webElement5 = driver.findElement(By.cssSelector(".integri-chat-message .integri-chat-message-text"));
         assertEquals(webElement5.getText(), "Edit this.. Test 6", "smth went wrong 2");
 
         driver.quit();
